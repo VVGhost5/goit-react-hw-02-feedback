@@ -18,3 +18,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
