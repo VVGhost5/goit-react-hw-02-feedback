@@ -12,7 +12,7 @@ const FeedbackButtons = ({ buttons, onHandleIncrement }) => {
                 value={value}
                 className={styles.button}
                 onClick={(evt) => {
-                  onHandleIncrement(evt.target.value);
+                  onHandleIncrement(evt);
                 }}
               >
                 {value}
@@ -29,7 +29,7 @@ FeedbackButtons.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      value: PropTypes.string.isRequired,
+      value: PropTypes.string,
     })
   ),
   onHandleIncrement: PropTypes.func.isRequired,

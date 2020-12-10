@@ -12,23 +12,9 @@ class App extends Component {
     bad: 0,
   };
 
-  handleIncrementFeedbackValue = (value) => {
-    switch (value) {
-      case "good":
-        this.setState((prevState) => ({ good: prevState.good + 1 }));
-        break;
-
-      case "neutral":
-        this.setState((prevState) => ({ neutral: prevState.neutral + 1 }));
-        break;
-
-      case "bad":
-        this.setState((prevState) => ({ bad: prevState.bad + 1 }));
-        break;
-
-      default:
-        break;
-    }
+  handleIncrementFeedbackValue = ({ target }) => {
+    const { value } = target;
+    this.setState((prevState) => ({ [value]: prevState[value] + 1 }));
   };
 
   countTotalFeedback = () => {

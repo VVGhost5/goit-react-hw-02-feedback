@@ -5,7 +5,7 @@ const Statistics = ({ state, totalFeedback, positiveFeedbackPercent }) => {
   const stateValuesArray = Object.keys(state);
   return (
     <div className="wrapper">
-      <ul className="list">
+      <ul>
         {stateValuesArray.map((el) => {
           return (
             <li key={stateValuesArray.indexOf(el)} className={styles.item}>
@@ -29,6 +29,8 @@ const Statistics = ({ state, totalFeedback, positiveFeedbackPercent }) => {
 
 Statistics.propTypes = {
   state: PropTypes.objectOf(PropTypes.number.isRequired),
+  totalFeedback: PropTypes.number.isRequired,
+  positiveFeedbackPercent: PropTypes.number.isRequired,
 };
 
 export default Statistics;
