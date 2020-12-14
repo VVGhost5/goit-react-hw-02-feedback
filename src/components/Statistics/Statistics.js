@@ -1,20 +1,28 @@
 import styles from "./Statistics.module.css";
 import PropTypes from "prop-types";
 
-const Statistics = ({ state, totalFeedback, positiveFeedbackPercent }) => {
-  const stateValuesArray = Object.keys(state);
+const Statistics = ({
+  good,
+  neutral,
+  bad,
+  totalFeedback,
+  positiveFeedbackPercent,
+}) => {
   return (
     <div className="wrapper">
       <ul>
-        {stateValuesArray.map((el) => {
-          return (
-            <li key={stateValuesArray.indexOf(el)} className={styles.item}>
-              <span>
-                {el}: {state[el]}
-              </span>
-            </li>
-          );
-        })}
+        <li key="good" className={styles.item}>
+          <span>Good: {good}</span>
+        </li>
+
+        <li key="bad" className={styles.item}>
+          <span>Bad: {bad}</span>
+        </li>
+
+        <li key="neutral" className={styles.item}>
+          <span>Neutral: {neutral}</span>
+        </li>
+
         <li key="total" className={styles.item}>
           <span>Total: {totalFeedback}</span>
         </li>
